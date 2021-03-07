@@ -10,6 +10,7 @@ class CalculatorTest {
     private static final double LEFT = 20.0;
     private static final double SUM = 30.0;
     private static final double DIVISION_RESULT = 2.0;
+    private static final double MULTIPLICATION_RESULT = 200.0;
 
     private Calculator calculator;
 
@@ -30,5 +31,12 @@ class CalculatorTest {
         Division division = new Division(LEFT, RIGHT);
         calculator.calculate(division);
         assertEquals(DIVISION_RESULT, division.getResult(), 0.0);
+    }
+
+    @Test
+    public void whenMultiplyTwoNumber_returnCorrectResult() {
+        Multiplication multiplication = new Multiplication(LEFT, RIGHT);
+        calculator.calculate(multiplication);
+        assertEquals(MULTIPLICATION_RESULT, multiplication.getResult(), 0.0);
     }
 }
